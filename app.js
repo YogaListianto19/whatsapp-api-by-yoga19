@@ -50,7 +50,7 @@ const client = new Client({
 client.on('message', (msg) => {
   if (msg.body == 'Hai Odoo') {
     //Ketika client mengirim pesan !ping
-    msg.reply(`Hai sahabat odoo, terima kasih telah menghubungi nomor ini. %0A Silahkan ketik informasi yang sahabat perlukan: %0A *Info* %0A *Promo*`); // Maka akan dibls pong
+    msg.reply(`Hai sahabat odoo, terima kasih telah menghubungi nomor ini.` & `Silahkan ketik informasi yang sahabat perlukan: ` & `*Info*` & `*Promo*`); // Maka akan dibls pong
   }
 });
 
