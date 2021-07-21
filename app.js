@@ -7,6 +7,7 @@ const qrcode = require('qrcode');
 const http = require('http');
 const { response } = require('express');
 const { phoneNumberFormatter } = require('./helpers/formatter');
+const port = process.env.PORT || 3042;
 
 const app = express();
 const server = http.createServer(app);
@@ -153,6 +154,6 @@ app.post('/send-media', (req, res) => {
     });
 });
 
-server.listen(3042, () => {
-  console.log('App running on *: ' + 3042);
+server.listen(port, () => {
+  console.log('App running on *: ' + port);
 });

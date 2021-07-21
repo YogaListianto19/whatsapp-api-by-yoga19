@@ -29,7 +29,7 @@
     ></script>
     <script>
       $(document).ready(function () {
-        var socket = io.connect('http://localhost:3042', { path: '/socket.io' });
+        var socket = io();
 
         socket.on('message', function (msg) {
           $('.logs').append($('<li>').text(msg));
