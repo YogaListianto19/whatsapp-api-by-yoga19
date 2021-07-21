@@ -153,6 +153,6 @@ app.post('/send-media', (req, res) => {
     });
 });
 
-server.listen(3000, () => {
-  console.log('App running on *: ' + 3000);
+server.listen(3042, () => {
+  console.log('App running on *: ' + 3042);
 });
