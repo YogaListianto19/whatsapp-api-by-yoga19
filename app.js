@@ -48,9 +48,9 @@ const client = new Client({
 
 // Chat bot
 client.on('message', (msg) => {
-  if (msg.body == '!ping') {
+  if (msg.body == 'Hai Odoo') {
     //Ketika client mengirim pesan !ping
-    msg.reply('pong'); // Maka akan dibls pong
+    msg.reply(`Hai sahabat odoo, terima kasih telah menghubungi nomor ini. %0A Silahkan ketik informasi yang sahabat perlukan: %0A *Info* %0A *Promo*`); // Maka akan dibls pong
   }
 });
 
