@@ -37,6 +37,7 @@
 
         socket.on('qr', function (src) {
           $('#qrcode').attr('src', src);
+          $('#qrcode').show();
         });
 
         socket.on('ready', function (src) {
