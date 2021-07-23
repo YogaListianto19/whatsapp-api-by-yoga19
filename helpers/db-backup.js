@@ -1,9 +1,10 @@
-const { Client, Pool } = require('pg');
-
-const connectionString = 'postgressql://postgres:admin@localhost:5432/db_odoo';
+const { Client } = require('pg');
 
 const client = new Client({
-  connectionString: connectionString,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 client.connect();
