@@ -53,13 +53,17 @@ const db = require('./helpers/db');
   });
 
   // Chat bot
-  client.on('message', (msg) => {
+  client.on('message', async (msg) => {
+    const replyMsg = await db.ambilName(msg.body);
     if (msg.body == 'Hai Odoo') {
-      //Ketika client mengirim pesan !ping
       msg.reply(`Hai sahabat odoo, terima kasih telah menghubungi nomor ini.
 Silahkan ketik informasi yang sahabat perlukan:
-*Info*
-*Promo*`); // Maka akan dibls pong
+*Id Student*
+*Info*`);
+    } else if (msg.body == 'Info') {
+      msg.reply(`Ini adalah sebuah demo WhatsApp API menggunakan Node.js`);
+    } else if (replyMsg !== false) {
+      msg.reply(replyMsg);
     }
   });
 

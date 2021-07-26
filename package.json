@@ -4,7 +4,7 @@
   "description": "WhatsApp API by Yoga Listianto",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
+    "start": "nodemon app",
     "start:dev": "nodemon app",
     "dev": "nodemon app-multiple-device.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,7 @@
     "express-validator": "^6.12.0",
     "http": "^0.0.1-security",
     "pg": "^8.6.0",
+    "pg-promise": "^10.10.2",
     "puppeteer": "^5.5.0",
     "qrcode": "^1.4.4",
     "socket.io": "^4.1.3",

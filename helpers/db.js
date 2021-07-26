@@ -1,4 +1,4 @@
-const { Client, Pool } = require('pg');
+const { Client, Pool, Query } = require('pg');
 
 const connectionString = 'postgressql://postgres:admin@localhost:5432/db_odoo';
 
@@ -7,6 +7,32 @@ const client = new Client({
 });
 
 client.connect();
+
+const ambilName = async (id_number) => {
+  // try {
+  //   const b = await client
+  //     .query('Select * from spk_student WHERE id_number = $1::text', [id_number])
+  //     .then((res) => console.log(res.rows[0].name))
+  //     .catch((e) => console.log('tidak ada'))
+  //     .then(() => client.end());
+  //   return res.rows[0].name;
+  // } catch (err) {
+  //   throw err;
+  // }
+  // const query = new Query('Select * from spk_student WHERE id_number = $1::text', [id_number]);
+  // const result = client.query(query);
+  // const result = []
+  try {
+    const res = await client.query('Select * from spk_student WHERE id_number = $1', [id_number]);
+    if (res.rows.length) return res.rows[0].name;
+    console.log('gagal');
+    return '';
+  } catch (e) {
+    throw e;
+  }
+};
+
+// console.log(ambilName('S-0001'));
 
 const readSession = async () => {
   try {
@@ -42,4 +68,5 @@ module.exports = {
   readSession,
   saveSession,
   removeSession,
+  ambilName,
 };
